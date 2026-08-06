@@ -1,0 +1,10 @@
+
+.border-style {
+    border:2px solid gray;
+    padding: 5px;
+    width: 60px;
+}
+.border-style:hover {
+    border: 2px solid blue;
+    cursor: grab;
+}
