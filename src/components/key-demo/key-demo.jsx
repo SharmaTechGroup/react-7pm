@@ -11,6 +11,7 @@ export function KeyDemo(){
     const [users, setUsers] = useState([{user_id:''}]);
     const [userMsg, setUserMsg] = useState('');
     const [errorClass, setErrorClass] = useState('');
+    const [pan, setPan] = useState('');
 
     function LoadUsers(){
         axios.get('users.json')
@@ -54,8 +55,22 @@ export function KeyDemo(){
         }
     }
 
+    function handleContextMenu(){
+         document.oncontextmenu = function(){
+             alert('Right Click not allowed');
+             return false;
+         }
+    }
+
+    function handlePanChange(e){
+        setPan(e.target.value);
+    }
+    function handlePanBlur(){
+        setPan(pan.toUpperCase());
+    }
+
     return(
-        <div className="container-fluid p-3">
+        <div onContextMenu={handleContextMenu} className="container-fluid p-3">
             <h3>Regiser</h3>
             <dl className="w-25">
                 <dt>User Id</dt>
@@ -70,6 +85,8 @@ export function KeyDemo(){
                             {msg}
                     </div>
                 </dd>
+                <dt>PAN Number</dt>
+                <dd><input type="text" onBlur={handlePanBlur} onChange={handlePanChange} value={pan} className="form-control" /></dd>
             </dl>
         </div>
     )

@@ -12,9 +12,11 @@ import { EventDemo } from './components/event-demo/event-demo.jsx';
 import { MouseDemo } from './components/mouse-demo/mouse-demo.jsx';
 import { MouseDown } from './mouse-down/mouse-down.jsx';
 import { KeyDemo } from './components/key-demo/key-demo.jsx';
+import { EMICalculator } from './components/emi-calculator/emi-calculator.jsx';
+import { DebounceDemo } from './components/debounce-demo/debounce-demo.jsx';
 
 createRoot(document.getElementById('root')).render(
   
-      <KeyDemo />
+      <DebounceDemo />
   
 )
