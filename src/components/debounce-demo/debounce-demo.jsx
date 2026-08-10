@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 
 export function DebounceDemo(){
@@ -6,6 +6,8 @@ export function DebounceDemo(){
 
     const [volume,setVolume] = useState(1);
     const [msg, setMsg] = useState('');
+
+    let l2 = useRef(null);
 
     function Level1(){
         setMsg('Volume 30% Increased');
@@ -19,16 +21,22 @@ export function DebounceDemo(){
         setMsg('Volume Full');
         setVolume(100);
     }
-
+   
     function handleVolumeClick(){
         setTimeout(Level1, 4000);
-        setTimeout(Level2,10000);
+        l2.current =  setTimeout(Level2,10000);
         setTimeout(Level3, 15000);
+    }
+
+    function handleCancelClick(){
+        alert('Level2 Canceled..');
+        clearTimeout(l2.current);
     }
 
     return(
         <div className="container-fluid">
             <button onClick={handleVolumeClick} className="btn btn-primary bi bi-volume-up-fill mt-3"></button>
+            <button onClick={handleCancelClick} className="btn btn-warning mx-2 mt-3">Cancel Level2</button>
             <div className="w-50">
                 <input type="range" className="form-range" value={volume} min={1} max={100} />
             </div>

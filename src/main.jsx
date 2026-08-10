@@ -14,9 +14,11 @@ import { MouseDown } from './mouse-down/mouse-down.jsx';
 import { KeyDemo } from './components/key-demo/key-demo.jsx';
 import { EMICalculator } from './components/emi-calculator/emi-calculator.jsx';
 import { DebounceDemo } from './components/debounce-demo/debounce-demo.jsx';
+import { ThrottleDemo } from './components/throttle/throttle-demo.jsx';
+import { SlideShow } from './components/slide-show/slide-show.jsx';
 
 createRoot(document.getElementById('root')).render(
   
-      <DebounceDemo />
+      <SlideShow />
   
 )
