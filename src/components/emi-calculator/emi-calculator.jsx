@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export function EMICalculator(){
 
@@ -10,24 +10,31 @@ export function EMICalculator(){
     function CalculateEMI(){
         let P = parseInt(loanAmount);
         let R = parseFloat(rate)/12/100;
-        let N = parseInt(years) * 12; 
-        let EMI = P * R * (Math.pow(1+R,N)) / (Math.pow(1+R,N))-1;
+        let N = parseInt(years) * 12;       
+        let EMI = P * R * (Math.pow(1+R,N)) / (Math.pow(1+R,N)-1);
         setEmi(EMI);
     }
 
     function handleAmountChange(e){
         setLoanAmount(e.target.value);
-        CalculateEMI();
+        
     }
     function handleYearChange(e){
-        setYears(e.target.value);
-        CalculateEMI();
+        if(e.target.value===""){
+            setYears(1);
+        } else {
+            setYears(e.target.value);
+        }  
     }
+
 
     function handleRateChange(e){
         setRate(e.target.value);
-        CalculateEMI();
+        
     }
+    useEffect(()=>{
+        CalculateEMI();
+    },[years, loanAmount, rate])
 
     return(
         <div className="bg-secondary row p-4" style={{height:'100vh'}}>
@@ -57,7 +64,7 @@ export function EMICalculator(){
                         <label className="fw-bold">Loan Tenure</label>
                     </div>
                     <div>
-                        <input type="text" size={2} value={years} onChange={handleYearChange} />
+                        <input type="number" size={2} min="1" max="5" value={years} onChange={handleYearChange} />
                     </div>
                     </div>
                     <div className="mt-4">

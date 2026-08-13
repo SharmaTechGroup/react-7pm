@@ -16,9 +16,10 @@ import { EMICalculator } from './components/emi-calculator/emi-calculator.jsx';
 import { DebounceDemo } from './components/debounce-demo/debounce-demo.jsx';
 import { ThrottleDemo } from './components/throttle/throttle-demo.jsx';
 import { SlideShow } from './components/slide-show/slide-show.jsx';
+import { FormDemo } from './components/form-demo/form-demo.jsx';
 
 createRoot(document.getElementById('root')).render(
   
-      <SlideShow />
+      <FormDemo />
   
 )

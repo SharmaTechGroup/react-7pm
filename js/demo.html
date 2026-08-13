@@ -4,21 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        var uname;
-        function NameChange(e){
-            console.log(e.charCode);
-            uname = document.getElementById("txtName").value;
-            if(uname==="john"){
-                document.querySelector("p").innerHTML = "Verified"; 
-            } else {
-                document.querySelector("p").innerHTML = "Invalid";
-            }
-        }
-    </script>
 </head>
 <body>
-    <input type="text" onkeypress="NameChange(event)" id="txtName">
-    <p></p>
+    <form method="post">
+        Name : <input type="text" name="Name">
+        <br>
+        Price : <input type="number" name="Price">
+        <br>
+        <button>Submit</button>
+    </form>
 </body>
 </html>
