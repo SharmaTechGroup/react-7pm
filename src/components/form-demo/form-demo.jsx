@@ -51,6 +51,11 @@ export function FormDemo(){
             console.log(data);
         }
     })
+
+    function handleCategoryBlur(e){
+        formik.handleBlur(e);
+        alert('Category Blured');
+    }
     
     return(
         <div className="container-fluid">
@@ -58,14 +63,14 @@ export function FormDemo(){
             <form onSubmit={formik.handleSubmit}>
                 <dl>
                     <dt>Id</dt>
-                    <dd><input type="number" onBlur={formik.handleBlur}  onChange={formik.handleChange} name="Id" /></dd>
+                    <dd><input type="number" {...formik.getFieldProps('Id')} name="Id" /></dd>
                     <dd className="text-danger">{formik.touched.Id && formik.errors.Id}</dd>
                     <dt>Name</dt>
-                    <dd><input type="text" onBlur={formik.handleBlur} onChange={formik.handleChange}   name="Name" /></dd>
+                    <dd><input type="text" {...formik.getFieldProps('Name')}   name="Name" /></dd>
                     <dd className="text-danger">{ formik.touched.Name && formik.errors.Name}</dd>
                     <dt>Category</dt>
                     <dd>
-                        <select name="Category" onBlur={formik.handleBlur} onChange={formik.handleChange}>
+                        <select name="Category" onBlur={handleCategoryBlur} onChange={formik.handleChange}>
                             <option value="-1">Select Category</option>
                             <option value="Electronics">Electronics</option>
                             <option value="Fashion">Fashion</option>

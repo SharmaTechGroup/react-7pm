@@ -17,9 +17,13 @@ import { DebounceDemo } from './components/debounce-demo/debounce-demo.jsx';
 import { ThrottleDemo } from './components/throttle/throttle-demo.jsx';
 import { SlideShow } from './components/slide-show/slide-show.jsx';
 import { FormDemo } from './components/form-demo/form-demo.jsx';
+import { FormikDemo } from './components/formik-demo/formik-demo.jsx';
+import { ConditionDemo } from './components/condition-demo/condition-demo.jsx';
+import { HookFormDemo } from './components/hook-form-demo/hook-form-demo.jsx';
+import { ControlledDemo } from './components/controlled-demo/controlle-demo.jsx';
 
 createRoot(document.getElementById('root')).render(
   
-      <FormDemo />
+      <ControlledDemo/>
   
 )
