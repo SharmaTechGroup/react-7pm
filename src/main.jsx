@@ -21,9 +21,11 @@ import { FormikDemo } from './components/formik-demo/formik-demo.jsx';
 import { ConditionDemo } from './components/condition-demo/condition-demo.jsx';
 import { HookFormDemo } from './components/hook-form-demo/hook-form-demo.jsx';
 import { ControlledDemo } from './components/controlled-demo/controlle-demo.jsx';
+import { ContextDemo } from './components/context-demo/context-demo.jsx';
+import { ShoppingIndex } from './shopping/shopping-index.jsx';
 
 createRoot(document.getElementById('root')).render(
   
-      <ControlledDemo/>
+      <ShoppingIndex/>
   
 )
