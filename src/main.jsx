@@ -23,9 +23,11 @@ import { HookFormDemo } from './components/hook-form-demo/hook-form-demo.jsx';
 import { ControlledDemo } from './components/controlled-demo/controlle-demo.jsx';
 import { ContextDemo } from './components/context-demo/context-demo.jsx';
 import { ShoppingIndex } from './shopping/shopping-index.jsx';
+import { TutorialIndex } from './tutorial/tutorial-index.jsx';
+import { FakestoreIndex } from './fakestore/fakestore-index.jsx';
 
 createRoot(document.getElementById('root')).render(
   
-      <ShoppingIndex/>
+      <FakestoreIndex/>
   
 )
