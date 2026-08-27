@@ -17,7 +17,7 @@ export function FakestoreDetails(){
     }
     useEffect(()=>{
         LoadProduct();
-    },[])
+    },[params.id])
 
     return(
         <div className="container-fluid">

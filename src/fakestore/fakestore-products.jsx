@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 
 
 
-export function FakestoreProducts(){
+export default function FakestoreProducts(){
 
     let params = useParams();
 
@@ -24,19 +24,26 @@ export function FakestoreProducts(){
     return(
         <div className="container-fluid">
             <h4>Products</h4>
-            <div className="d-flex flex-wrap w-50">
-                {
-                    products.map(product=>
-                        <div key={product.id} className="card m-2 p-2" style={{width:'100px'}}>
-                            <img height="50" src={product.image} />
-                            <div className="card-footer">
-                                <Link to={`/details/${product.id}`}>Details</Link>
-                            </div>
-                        </div>
-                    )
-                }
+            <div className="row">
+                <div className="col">
+                    <div className="d-flex flex-wrap">
+                        {
+                            products.map(product=>
+                                <div key={product.id} className="card m-2 p-2" style={{width:'100px'}}>
+                                    <img height="50" src={product.image} />
+                                    <div className="card-footer">
+                                        <Link to={`details/${product.id}`}>Details</Link>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    </div>
+                    <Link to="/">Back to categories</Link>
+                </div>
+                <div className="col">
+                    <Outlet />
+                </div>
             </div>
-            <Link to="/">Back to categories</Link>
         </div>
     )
 }

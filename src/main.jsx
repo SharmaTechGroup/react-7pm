@@ -25,9 +25,14 @@ import { ContextDemo } from './components/context-demo/context-demo.jsx';
 import { ShoppingIndex } from './shopping/shopping-index.jsx';
 import { TutorialIndex } from './tutorial/tutorial-index.jsx';
 import { FakestoreIndex } from './fakestore/fakestore-index.jsx';
+import { CookiesProvider } from 'react-cookie';
+import { RouterProvider } from 'react-router-dom';
+import router from './routes/routes.jsx';
 
 createRoot(document.getElementById('root')).render(
   
-      <FakestoreIndex/>
+     <CookiesProvider>
+        <RouterProvider  router={router} />
+     </CookiesProvider>
   
 )
