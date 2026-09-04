@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
+import {  useMemo } from "react";
 
 export function useFilter(searchString, data){
 
-    const [filteredData, setFilteredData] = useState([]);
+    let filteredData = useMemo(()=>{
 
-    useEffect(()=>{
-
-        setFilteredData(data.filter(item=> item.toLowerCase().includes(searchString.toLowerCase())));
+       return data.filter(item=> item.toLowerCase().includes(searchString.toLowerCase()))
 
     },[searchString])
 

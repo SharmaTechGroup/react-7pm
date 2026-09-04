@@ -28,11 +28,13 @@ import { FakestoreIndex } from './fakestore/fakestore-index.jsx';
 import { CookiesProvider } from 'react-cookie';
 import { RouterProvider } from 'react-router-dom';
 import router from './routes/routes.jsx';
+import { HooksDemo } from './components/hooks-demo/hooks-demo.jsx';
+import { ReducerDemo } from './components/reducer-demo/reducer-demo.jsx';
 
 createRoot(document.getElementById('root')).render(
   
      <CookiesProvider>
-        <RouterProvider  router={router} />
+        <ReducerDemo />
      </CookiesProvider>
   
 )
